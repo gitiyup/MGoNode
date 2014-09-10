@@ -12,61 +12,48 @@ Implemented using Node JS Express and Mongoose JS as Mongo DB client.  Node JS E
 ## Usage
 
 ### Endpoint 1
-POST /authenticate
-
-  Authenticates a user name and password.
+POST /authenticate  
+    Authenticates a user name and password.
  
-Request Body:
-
-  { userName: <user_name>, password: <password> }
+Request Body:  
+    { userName: <user_name>, password: <password> }
  
-Response Body:
-
-  { authenticated: true | false }
+Response Body:  
+    { authenticated: true | false }
 
 
 ### Endpoint 2
-GET /user/{city}/{profession}
-
-  Gets a user filtered by city and grouped by profession
+GET /user/{city}/{profession}  
+    Gets a user filtered by city and grouped by profession
  
-URL Parameters:
+URL Parameters:  
+    city - city string value to filter by  
+    profession - profession string value to group by  
 
-  city - city string value to filter by
-
-  profession - profession string value to group by
-
-Response Body:
-
-  { <profession>: [{ firstName: <firstName>, lastName: <lastName>, city: <city> }, ...] }
+Response Body:  
+    { <profession>: [{ firstName: <firstName>, lastName: <lastName>, city: <city> }, ...] }
   
 
 ### Endpoint 3
-GET /files
-
-  Returns list of files in given directory
+GET /files  
+    Returns list of files in given directory
  
-Query Parameters:
-
-  directory - directory path to list
+Query Parameters:  
+    directory - directory path to list
   
-Response Body:
-
-  [ file_name, ...]
+Response Body:  
+    [ file_name, ...]
 
 
 ### Endpoint 4
-GET /component-statuses
-
-  Returns the status of dependent components (just Mongo DB)
+GET /component-statuses  
+    Returns the status of dependent components (just Mongo DB)
  
 Response Body:
-
-  { mongodbStatus: OK | Bad, errorDetails: <error_details_message> }
+    { mongodbStatus: OK | Bad, errorDetails: <error_details_message> }
    
-Note:
-
-  errorDetails in response if mongodbStatus: Bad
+Note:  
+    errorDetails in response if mongodbStatus: Bad
 
 
 
